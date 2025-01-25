@@ -7,7 +7,7 @@ from rest_framework.exceptions import AuthenticationFailed, PermissionDenied, Me
 import requests
 
 
-def request_service(service: Literal['auth', 'chat', 'game', 'matchmaking', 'users'], endpoint: str, method: Literal['GET', 'POST', 'PUT', 'PATCH', 'DELETE'] | str, data=None, token=None):
+def request_service(service: Literal['localhost', 'auth', 'chat', 'game', 'matchmaking', 'users'], endpoint: str, method: Literal['GET', 'POST', 'PUT', 'PATCH', 'DELETE'] | str, data=None, token=None, port=8000):
     if data is not None:
         data = json.dumps(data, default=datetime_serializer)
 
@@ -15,11 +15,14 @@ def request_service(service: Literal['auth', 'chat', 'game', 'matchmaking', 'use
     if token is not None:
         headers['Authorization'] = token
 
+    url_protocol = 'http'
+    if port == 4443:
+        url_protocol += 's'
     try:
         print(method, f'[{service}] => /{endpoint}' + ('' if data is None else f' - {data}'), flush=True)
         response = requests.request(
             method=method,
-            url=f'http://{service}:8000/{endpoint}',
+            url=f'{url_protocol}://{service}:{port}/{endpoint}',
             headers=headers,
             data=data
         )

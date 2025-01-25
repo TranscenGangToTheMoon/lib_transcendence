@@ -166,8 +166,8 @@ class ServiceUnavailable(APIException):
     default_detail = MessagesException.ServiceUnavailable.SERVICE_UNAVAILABLE
     default_code = 'service_unavailable'
 
-    def __init__(self, service: Literal['auth', 'chat', 'game', 'matchmaking', 'event-queue', 'users']):
-        if service in ['auth', 'chat', 'game', 'matchmaking', 'event-queue', 'users']:
+    def __init__(self, service: Literal['localhost', 'auth', 'chat', 'game', 'matchmaking', 'event-queue', 'users']):
+        if service in ['localhost', 'auth', 'chat', 'game', 'matchmaking', 'event-queue', 'users']:
             self.detail = ServiceUnavailable.default_detail.format(service=service)
         else:
             self.detail = service
