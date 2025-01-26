@@ -17,6 +17,7 @@ class MessagesException:
         BLOCKED_INSTANCE = NOT_FOUND.format(obj='Blocked instance')
         MATCH = NOT_FOUND.format(obj='Match')
         CHAT = NOT_FOUND.format(obj='Chat')
+        PROFILE_PICTURE = NOT_FOUND.format(obj='Profile picture')
 
         NOT_BELONG = 'You do not belong to any {obj}.'
         NOT_BELONG_TOURNAMENT = NOT_BELONG.format(obj='tournament')
