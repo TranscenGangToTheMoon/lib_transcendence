@@ -77,6 +77,7 @@ class MessagesException:
         GUEST_UPDATE_USERNAME = 'Guest users can only update their username.'
         GUEST_REQUIRED = 'You must be a guest user.'
         ALREADY_AUTHENTICATED = 'You are already authenticated.'
+        PROFILE_PICTURE_LOCKED = 'You did not unlock this profile picture.'
 
         NOT_BELONG = 'You do not belong to this {obj}.'
         NOT_BELONG_TO_CHAT = NOT_BELONG.format(obj='chat')
