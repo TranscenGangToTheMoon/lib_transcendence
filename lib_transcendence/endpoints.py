@@ -84,6 +84,7 @@ class Users:
     result_tournament = 'api/private/users/result-tournament/'
 
     profile_pictures = 'api/users/profile-pictures/'
+    fprofile_picture = 'api/users/profile-picture/{id}/'
     profile_picture = 'api/users/profile-picture/<int:id>/'
 
     export_data = 'api/users/me/download-data/'
