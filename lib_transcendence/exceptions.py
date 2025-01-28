@@ -95,7 +95,7 @@ class MessagesException:
         BLOCK_YOURSELF = 'You cannot block yourself.'
         SEND_FRIEND_REQUEST_YOURSELF = 'You cannot send a friend request to yourself.'
         FRIEND_YOURSELF = 'You cannot be friends with yourself.'
-        ACCEPT_FRIEND_REQUEST_YOURSELF = {'detail': 'you cannot accept your own friend request.'} # todo
+        ACCEPT_FRIEND_REQUEST_YOURSELF = 'You cannot accept your own friend request.'
 
         IS_FULL = '{obj} is full.'
         TEAM_IS_FULL = IS_FULL.format(obj='Team')
