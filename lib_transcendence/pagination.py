@@ -17,19 +17,3 @@ class LimitOffsetPagination(LimitOffsetPaginationRestFramework):
         if previous_link is not None:
             return '/' + previous_link.split(self.request.build_absolute_uri('/'))[-1]
         return None
-
-
-def get_all_pagination_items(request_service, service, endpoint, **kwargs):
-    result = []
-    while True:
-        try:
-            response = request_service(endpoint, 'GET', **kwargs)
-            result += response['results']
-            if response['next'] is None:
-                break
-            endpoint = response['next']
-        except PermissionDenied:
-            return result
-        except APIException:
-            raise ServiceUnavailable(service)
-    return result
