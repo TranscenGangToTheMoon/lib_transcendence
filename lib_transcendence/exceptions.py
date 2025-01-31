@@ -136,6 +136,7 @@ class MessagesException:
         DEFAULT = 'Conflict.'
         ALREADY_IN_GAME_OR_TOURNAMENT = 'You are already in a game or a tournament.'
         USER_ALREADY_IN_GAME = 'Users are already in a game.'
+        USER_ALREADY_IN_TOURNAMENT = 'Users are already in a tournament.'
 
     class ResourceExists:
         DEFAULT = 'Resource already exists.'
